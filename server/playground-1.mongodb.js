@@ -13,14 +13,7 @@ use(database);
 db.createCollection(collection);
 
 // Insert a new document.
-db[collection].insertOne({ _id: document, item: 'canvas', qty: 100, price: 12 });
-
-// Find the document.
-db[collection].find({ _id: document });
-
-// Update the document.
-db[collection].updateOne({ _id: document }, { $set: { price: 20 } });
-
+// db[collection].insertOne({ _id: document, item: 'canvas', qty: 100, price: 12 });
 // create many documents
 db[collection].insertMany([
   { _id: 'sale-2', item: 'canvas', qty: 200, price: 15 },
@@ -28,6 +21,13 @@ db[collection].insertMany([
   { _id: 'sale-4', item: 'mat', qty: 10, price: 8 },
   { _id: 'sale-5', item: 'mousepad', qty: 25, price: 10 },
 ]);
+
+// Find the document.
+db[collection].find({ _id: document });
+
+// Update the document.
+db[collection].updateOne({ _id: document }, { $set: { price: 20 } });
+
 
 
 // The prototype form to create a collection:
